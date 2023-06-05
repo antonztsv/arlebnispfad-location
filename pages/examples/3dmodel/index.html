@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>3D-Model</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+
+    <script src="//cdn.jsdelivr.net/npm/eruda"></script>
+  </head>
+
+  <body style="margin: 0; overflow: hidden">
+    <script>
+      eruda.init();
+    </script>
+
+    <a-scene vr-mode-ui="enabled: false" arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;">
+      <!-- <a-text
+        value="MENSA"
+        look-at="[gps-camera]"
+        scale="120 120 120"
+        gps-entity-place="latitude: 51.022145; longitude: 7.562587;"
+      ></a-text> -->
+      <!-- <a-text
+        value="Polizei"
+        look-at="[gps-camera]"
+        scale="120 120 120"
+        gps-entity-place="latitude: 51.020876; longitude: 7.562457;"
+      ></a-text> -->
+
+      <a-entity
+        position="0 0 0"
+        scale="5 5 5"
+        gltf-model="./assets/asset.gltf"
+        gps-entity-place="latitude: 51.020876; longitude: 7.562457;"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
+      ></a-entity>
+      <a-camera gps-camera rotation-reader> </a-camera>
+    </a-scene>
+  </body>
+</html>

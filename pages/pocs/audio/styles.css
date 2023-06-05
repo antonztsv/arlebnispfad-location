@@ -1,0 +1,123 @@
+/* basic css reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
+.back {
+  fill: #333;
+  background-color: #ffdd02;
+  border-radius: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  text-decoration: none;
+  margin: 0.5rem;
+  padding: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ar {
+  z-index: -10;
+}
+
+.container {
+  background-color: #fff;
+  z-index: 10;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+
+  padding: 1rem;
+  margin: 0.5rem;
+  min-height: 5rem;
+  min-width: calc(100vw - 1rem);
+
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 1.5rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.info-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: first baseline;
+  width: 100%;
+}
+
+.info-head svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: #333;
+  cursor: pointer;
+}
+
+.player {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.item {
+  padding: 0.5rem;
+  border: 1px solid transparent;
+  background-color: #ffdd02;
+  border-radius: 5px;
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.item svg {
+  width: 1.3rem;
+  height: 1.3rem;
+  fill: #333;
+}
+
+/* collapsed text to one line with ellipsis */
+.collapsed {
+  width: calc(100vw - 3rem);
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.hidden {
+  display: none;
+}
