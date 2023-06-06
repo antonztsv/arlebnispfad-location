@@ -12,7 +12,7 @@ async function staticLoadPlaces() {
 
 function renderPlaces(places) {
   const scene = document.querySelector("a-scene");
-  // const assets = document.querySelector("a-assets");
+  const assets = document.querySelector("a-assets");
 
   places.forEach((place) => {
     const {
@@ -23,10 +23,10 @@ function renderPlaces(places) {
     } = place;
 
     // add audio to assets - not working for some reason!
-    // const audioEl = document.createElement("audio");
-    // audioEl.setAttribute("id", audio);
-    // audioEl.setAttribute("src", `./assets/audio/${audio}.mp3`);
-    // audioEl.setAttribute("preload", "auto");
+    const audioEl = document.createElement("audio");
+    audioEl.setAttribute("id", audio);
+    audioEl.setAttribute("src", `./assets/audio/${audio}.mp3`);
+    audioEl.setAttribute("preload", "auto");
 
     // add place as text
     const text = document.createElement("a-text");
@@ -39,14 +39,15 @@ function renderPlaces(places) {
     text.setAttribute("data-audio", audio);
     text.setAttribute("data-description", description);
     text.setAttribute("data-title", name);
-    text.setAttribute("sound", `src: url(./assets/audio/${audio}.mp3); refDistance: 10000;`);
+    // text.setAttribute("sound", `src: url(./assets/audio/${audio}.mp3); refDistance: 10000;`);
+    text.setAttribute("sound", `src: #${audio}; refDistance: 10000;`);
     text.classList.add("clickable");
 
     text.addEventListener("loaded", () => {
       window.dispatchEvent(new CustomEvent("gps-entity-place-loaded", { detail: { component: this.el } }));
     });
 
-    // assets.appendChild(audioEl);
+    assets.appendChild(audioEl);
     scene.appendChild(text);
   });
 }
@@ -93,6 +94,7 @@ const initAudioControls = () => {
   player.addEventListener("click", (e) => {
     const audioSrc = player.dataset.audioSource;
     const audio = document.querySelector(`[data-audio="${audioSrc}"]`);
+    let interval = null;
 
     if (e.target.matches(".play")) {
       audio.components.sound.playSound();
@@ -101,6 +103,28 @@ const initAudioControls = () => {
       e.target.nextElementSibling.classList.remove("hidden");
 
       audio.addEventListener("sound-ended", stopAllAudio);
+
+      // --------------------
+
+      // const duration = audio.components.sound.pool.children[0].source.buffer.duration;
+      // console.log(`duration: ${duration}`);
+
+      // const audioEl = document.querySelector(`#${audioSrc}`);
+      // const duration2 = audioEl.duration;
+      // console.log(`duration2: ${duration2}`);
+
+      // const soundComponent = audio.components.sound;
+      // const audioSource = soundComponent.pool.children[0].source;
+      // const audioContext = audioSource.context;
+
+      // console.log(soundComponent.pool.children[0].source.buffer.currentTime);
+
+      // setInterval(() => {
+      //   const currentTime = audioContext.currentTime - soundComponent.pool.children[0].startTime;
+      //   console.log(`currentTime: ${currentTime}`);
+      // }, 1000);
+
+      // --------------------
     } else if (e.target.matches(".pause")) {
       audio.components.sound.pauseSound();
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -46,7 +46,7 @@
         arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
         device-orientation-permission-ui="deviceMotionMessage:  Diese immersive Website erfordert den Zugriff auf die Bewegungssensoren Ihres Geräts.;  httpsMessage:  Greifen Sie über HTTPS auf diese Website zu, um in den AR-Modus zu gelangen und Zugriff auf die Gerätesensoren zu erhalten.;  denyButtonText:  Verweigern;  allowButtonText:  Erlauben;  cancelButtonText:  Abbrechen"
       >
-        <!-- assets (not working) -->
+        <!-- asset management -->
         <a-assets> </a-assets>
 
         <a-camera gps-projected-camera rotation-reader></a-camera>
@@ -94,6 +94,8 @@
           </svg>
         </div>
       </div>
+
+      <p class="progress"></p>
     </div>
   </body>
 </html>

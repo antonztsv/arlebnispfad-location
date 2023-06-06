@@ -9,10 +9,13 @@ AFRAME.registerComponent("clicker", {
       // console.log("clicker clicked!"); // DEBUG
 
       player.dataset.audioSource = this.el.dataset.audio;
-
-      // title.innerText = this.el.getAttribute("value");
       title.innerText = this.el.dataset.title;
       description.innerText = this.el.dataset.description;
+
+      // const audioEl = document.querySelector(`#${this.el.dataset.audio}`);
+      // const { duration } = audioEl;
+      // const progress = container.querySelector(".progress");
+      // progress.innerText = `0:00 - ${Math.round(duration)}`;
 
       container.classList.remove("hidden");
     });
