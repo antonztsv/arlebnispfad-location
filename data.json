@@ -42,6 +42,20 @@
         "type": "Point"
       },
       "id": 2
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Der Zeitungsleser",
+        "audio": "zeitungsleser",
+        "description": "Nichts bringt den Zeitungsleser, der am Anfang der Fußgängerzone steht, aus der Ruhe. Ganz leer ist es auch am frühen Morgen nicht, denn er steht immer da, vertraut, freundlich, ruhig, den Blick konzentriert auf die neuesten Nachrichten gerichtet. Und genau so entspannt wirkt die lebensgroße Bronzefigur von Waldemar Wien, wenn spielende Kinder herumtoben, Schülerscharen an ihm vorbei zum Busbahnhof strömen, dicht daneben frische Erdbeeren verkauft werden, wenn es auf die Zeitung in seinen Händen regnet oder schneit. Waldemar Wien (1927 - 1994) versteht es, mit seinen Skulpturen öffentliche Plätze lebendig auszugestalten.",
+        "image": "zeitungsleser"
+      },
+      "geometry": {
+        "coordinates": [7.567796, 51.024909],
+        "type": "Point"
+      },
+      "id": 3
     }
   ]
 }
