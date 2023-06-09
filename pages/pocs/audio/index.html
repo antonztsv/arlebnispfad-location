@@ -42,11 +42,10 @@
       <a-scene
         vr-mode-ui="enabled: false"
         cursor="rayOrigin: mouse; fuseTimeout: 0"
-        raycaster="near: 0; far: 5000; objects: .clickable"
+        raycaster="near: 1; far: 5000; objects: .clickable"
         arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
         device-orientation-permission-ui="deviceMotionMessage:  Diese immersive Website erfordert den Zugriff auf die Bewegungssensoren Ihres Geräts.;  httpsMessage:  Greifen Sie über HTTPS auf diese Website zu, um in den AR-Modus zu gelangen und Zugriff auf die Gerätesensoren zu erhalten.;  denyButtonText:  Verweigern;  allowButtonText:  Erlauben;  cancelButtonText:  Abbrechen"
       >
-        <!-- asset management -->
         <a-assets> </a-assets>
 
         <a-camera gps-projected-camera rotation-reader></a-camera>
@@ -54,7 +53,7 @@
     </div>
 
     <!-- Web/2D content -->
-    <div class="container hidden">
+    <div class="card hidden">
       <div class="info">
         <div class="info-head">
           <h1 class="title"></h1>
@@ -69,6 +68,8 @@
         </div>
 
         <p class="description"></p>
+
+        <p class="duration"></p>
       </div>
 
       <div class="player" data-audio-source="">
@@ -86,16 +87,7 @@
             />
           </svg>
         </div>
-        <div class="item stop hidden">
-          <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 384 512">
-            <path
-              d="M0 128C0 92.7 28.7 64 64 64H320c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"
-            />
-          </svg>
-        </div>
       </div>
-
-      <p class="progress"></p>
     </div>
   </body>
 </html>

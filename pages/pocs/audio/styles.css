@@ -33,7 +33,7 @@ body {
   z-index: -10;
 }
 
-.container {
+.card {
   background-color: #fff;
   z-index: 10;
   position: fixed;
@@ -65,9 +65,15 @@ body {
 
 .description {
   font-size: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   cursor: pointer;
   hyphens: auto;
+}
+
+.duration {
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
 }
 
 .info-head {

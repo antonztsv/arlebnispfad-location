@@ -1,23 +1,30 @@
 AFRAME.registerComponent("clicker", {
   init: function () {
-    const container = document.querySelector(".container");
-    const player = container.querySelector(".player");
-    const title = container.querySelector("h1");
-    const description = container.querySelector("p");
+    const cardEl = document.querySelector(".card");
+    const playerEl = cardEl.querySelector(".player");
+    const titleEl = cardEl.querySelector(".title");
+    const descriptionEl = cardEl.querySelector(".description");
+    const durationEl = cardEl.querySelector(".duration");
 
     this.el.addEventListener("click", (e) => {
-      // console.log("clicker clicked!"); // DEBUG
+      // make sure card is not already visible
+      if (!cardEl.classList.contains("hidden")) return;
 
-      player.dataset.audioSource = this.el.dataset.audio;
-      title.innerText = this.el.dataset.title;
-      description.innerText = this.el.dataset.description;
+      // set card content
+      playerEl.dataset.audioSource = this.el.dataset.audio;
+      titleEl.textContent = this.el.dataset.title;
+      descriptionEl.textContent = this.el.dataset.description;
 
-      // const audioEl = document.querySelector(`#${this.el.dataset.audio}`);
-      // const { duration } = audioEl;
-      // const progress = container.querySelector(".progress");
-      // progress.innerText = `0:00 - ${Math.round(duration)}`;
+      // set duration
+      const audioEl = document.querySelector(`#${this.el.dataset.audio}`);
+      const { duration } = audioEl;
+      const minutes = Math.floor(duration / 60);
+      const seconds = Math.floor(duration % 60);
+      const durationText = `Dauer: ${minutes}:${seconds.toString().padStart(2, "0")}`;
+      durationEl.textContent = durationText;
 
-      container.classList.remove("hidden");
+      // show card
+      cardEl.classList.remove("hidden");
     });
   },
 });

@@ -6,8 +6,7 @@
       "properties": {
         "name": "Mensa",
         "audio": "mensa",
-        "description": "Die Mensa der Technischen Hochschule Köln am Campus Gummersbach ist ein lebendiger Treffpunkt für Studierende und Mitarbeiter. Hier werden köstliche Mahlzeiten und Snacks serviert, die den Gaumen verwöhnen und die Energie für den Studienalltag liefern. Die Mensa schafft eine angenehme Atmosphäre, in der sich Menschen treffen, austauschen und gemeinsam eine kulinarische Erfahrung genießen können.",
-        "image": "mensa"
+        "description": "Die Mensa der Technischen Hochschule Köln am Campus Gummersbach ist ein lebendiger Treffpunkt für Studierende und Mitarbeiter. Hier werden köstliche Mahlzeiten und Snacks serviert, die den Gaumen verwöhnen und die Energie für den Studienalltag liefern. Die Mensa schafft eine angenehme Atmosphäre, in der sich Menschen treffen, austauschen und gemeinsam eine kulinarische Erfahrung genießen können."
       },
       "geometry": {
         "coordinates": [7.562724725621337, 51.02231978624965],
@@ -20,8 +19,7 @@
       "properties": {
         "name": "TH Koeln",
         "audio": "th-koeln",
-        "description": "Die Technische Hochschule Köln am Campus Gummersbach ist ein führendes Bildungszentrum im technischen Bereich, das Studierenden eine erstklassige Ausbildung und eine Plattform für akademische Exzellenz bietet. Als stolzer Teil des akademischen Erbes der Region steht die Hochschule für technologischen Fortschritt und innovative Karrieremöglichkeiten.",
-        "image": "th-koeln"
+        "description": "Die Technische Hochschule Köln am Campus Gummersbach ist ein führendes Bildungszentrum im technischen Bereich, das Studierenden eine erstklassige Ausbildung und eine Plattform für akademische Exzellenz bietet. Als stolzer Teil des akademischen Erbes der Region steht die Hochschule für technologischen Fortschritt und innovative Karrieremöglichkeiten."
       },
       "geometry": {
         "coordinates": [7.562014023283268, 51.02316038149539],
@@ -34,8 +32,7 @@
       "properties": {
         "name": "Berg",
         "audio": "berg",
-        "description": "Über die Jahrhunderte hinweg hat der im Zentrum des wunderschönen Oberbergischen Kreises gelegene Berg eine reiche und faszinierende Geschichte erlebt. Er war Schauplatz historischer Ereignisse und ist heute ein Symbol für den kulturellen Reichtum und die historische Bedeutung dieser malerischen Region.",
-        "image": "berg"
+        "description": "Über die Jahrhunderte hinweg hat der im Zentrum des wunderschönen Oberbergischen Kreises gelegene Berg eine reiche und faszinierende Geschichte erlebt. Er war Schauplatz historischer Ereignisse und ist heute ein Symbol für den kulturellen Reichtum und die historische Bedeutung dieser malerischen Region."
       },
       "geometry": {
         "coordinates": [7.5584001014183855, 51.020043829070374],
@@ -48,11 +45,10 @@
       "properties": {
         "name": "Der Zeitungsleser",
         "audio": "zeitungsleser",
-        "description": "Nichts bringt den Zeitungsleser, der am Anfang der Fußgängerzone steht, aus der Ruhe. Ganz leer ist es auch am frühen Morgen nicht, denn er steht immer da, vertraut, freundlich, ruhig, den Blick konzentriert auf die neuesten Nachrichten gerichtet. Und genau so entspannt wirkt die lebensgroße Bronzefigur von Waldemar Wien, wenn spielende Kinder herumtoben, Schülerscharen an ihm vorbei zum Busbahnhof strömen, dicht daneben frische Erdbeeren verkauft werden, wenn es auf die Zeitung in seinen Händen regnet oder schneit. Waldemar Wien (1927 - 1994) versteht es, mit seinen Skulpturen öffentliche Plätze lebendig auszugestalten.",
-        "image": "zeitungsleser"
+        "description": "Nichts bringt den Zeitungsleser, der am Anfang der Fußgängerzone steht, aus der Ruhe. Ganz leer ist es auch am frühen Morgen nicht, denn er steht immer da, vertraut, freundlich, ruhig, den Blick konzentriert auf die neuesten Nachrichten gerichtet. Und genau so entspannt wirkt die lebensgroße Bronzefigur von Waldemar Wien, wenn spielende Kinder herumtoben, Schülerscharen an ihm vorbei zum Busbahnhof strömen, dicht daneben frische Erdbeeren verkauft werden, wenn es auf die Zeitung in seinen Händen regnet oder schneit. Waldemar Wien (1927 - 1994) versteht es, mit seinen Skulpturen öffentliche Plätze lebendig auszugestalten."
       },
       "geometry": {
-        "coordinates": [7.567796, 51.024909],
+        "coordinates": [7.56791, 51.02486],
         "type": "Point"
       },
       "id": 3
