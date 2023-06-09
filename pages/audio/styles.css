@@ -1,20 +1,27 @@
+:root {
+  --accent: #ffdd02;
+  --dark: #333;
+  --light: #fff;
+}
+
 /* basic css reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
 }
+/* ----- */
 
 body {
   font-family: sans-serif;
-  background-color: #fff;
-  color: #333;
+  background-color: var(--light);
+  color: var(--dark);
+  overflow: hidden;
 }
 
 .back {
-  fill: #333;
-  background-color: #ffdd02;
+  fill: var(--dark);
+  background-color: var(--accent);
   border-radius: 10px;
   position: fixed;
   top: 0;
@@ -34,7 +41,7 @@ body {
 }
 
 .card {
-  background-color: #fff;
+  background-color: var(--light);
   z-index: 10;
   position: fixed;
   bottom: 0;
@@ -44,7 +51,6 @@ body {
 
   padding: 1rem;
   margin: 0.5rem;
-  min-height: 5rem;
   min-width: calc(100vw - 1rem);
 
   border-radius: 10px;
@@ -60,14 +66,22 @@ body {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
 }
 
 .description {
   font-size: 1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
   cursor: pointer;
   hyphens: auto;
+}
+
+.collapsed {
+  width: calc(100vw - 3rem);
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .duration {
@@ -86,7 +100,7 @@ body {
 .info-head svg {
   width: 1.5rem;
   height: 1.5rem;
-  fill: #333;
+  fill: var(--dark);
   cursor: pointer;
 }
 
@@ -98,9 +112,9 @@ body {
 }
 
 .item {
+  background-color: var(--accent);
   padding: 0.5rem;
   border: 1px solid transparent;
-  background-color: #ffdd02;
   border-radius: 5px;
   width: 100%;
   height: 3rem;
@@ -113,17 +127,8 @@ body {
 .item svg {
   width: 1.3rem;
   height: 1.3rem;
-  fill: #333;
+  fill: var(--dark);
   pointer-events: none;
-}
-
-/* collapsed text to one line with ellipsis */
-.collapsed {
-  width: calc(100vw - 3rem);
-  display: block;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 
 .hidden {

@@ -30,12 +30,12 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Berg",
-        "audio": "berg",
-        "description": "Über die Jahrhunderte hinweg hat der im Zentrum des wunderschönen Oberbergischen Kreises gelegene Berg eine reiche und faszinierende Geschichte erlebt. Er war Schauplatz historischer Ereignisse und ist heute ein Symbol für den kulturellen Reichtum und die historische Bedeutung dieser malerischen Region."
+        "name": "Bibliothek",
+        "audio": "bibliothek",
+        "description": "Die Bibliothek der Technischen Hochschule Köln am Campus Gummersbach ist ein wertvolles Zentrum des Wissens und der Information. Sie bietet eine umfangreiche Sammlung von Büchern, Fachzeitschriften und elektronischen Ressourcen, die den Studierenden und Forschenden bei ihren akademischen Arbeiten und Projekten unterstützen. Die Bibliothek schafft eine ruhige und inspirierende Umgebung, in der Lernen, Forschen und Wissensaustausch gefördert werden."
       },
       "geometry": {
-        "coordinates": [7.5584001014183855, 51.020043829070374],
+        "coordinates": [7.5625121, 51.02351],
         "type": "Point"
       },
       "id": 2
