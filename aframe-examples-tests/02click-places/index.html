@@ -9,7 +9,7 @@
   <body style="margin: 0; overflow: hidden">
     <a-scene
       vr-mode-ui="enabled: false"
-      cursor="rayOrigin: mouse"
+      cursor="rayOrigin: mouse; fuse: false"
       raycaster="near: 0; far: 50000"
       arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
       renderer="antialias: true; alpha: true"
@@ -20,7 +20,6 @@
         color="red"
         scale="50 50 50"
         clicker
-        event-set__click="_target: #e-entity; audio: sound: src: url('https://www.kozco.com/tech/organfinale.mp3');"
       ></a-box>
     </a-scene>
   </body>

@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // back button
   const back = document.querySelector(".back");
   back.addEventListener("click", (e) => {
-    window.location.href = "/";
+    window.history.back();
   });
 
   // card close button
