@@ -4,7 +4,7 @@ window.onload = async () => {
 };
 
 async function staticLoadPlaces() {
-  const res = await fetch("/data.json");
+  const res = await fetch("./data.json");
   const data = await res.json();
 
   return data.features;
