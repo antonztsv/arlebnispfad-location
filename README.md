@@ -1,4 +1,4 @@
-# ARlebnispfade OBK - Location-Based Tracking
+# "ARlebnispfade OBK" - Location-Based AR Tracking
 
 Dieses Repository enthält den Code für den im Rahmen des Praxisprojektes erstellten Prototypen zur Darstellung von AR-Inhalten im Web.
 
