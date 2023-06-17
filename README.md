@@ -2,7 +2,7 @@
 
 Dieses Repository enthält den Code für den im Rahmen des Praxisprojektes erstellten Prototypen zur Darstellung von AR-Inhalten im Web.
 
-Die Funktionen sind für die Interaktion auf mobilen Endgeräten ausgelegt, können aber auch eingeschränlt auf dem Desktop aufgerufen werden.
+Die Funktionen sind für die Interaktion auf mobilen Endgeräten ausgelegt, können aber auch eingeschränkt auf dem Desktop aufgerufen werden.
 
 Der Prototyp kann unter https://arlebnispfad-location.vercel.app/
 oder unter folgendem QR-Code aufgerufen werden:
