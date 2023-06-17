@@ -33,18 +33,26 @@ Die `index.html` Datei enthält die AR-Szene, die über die `a-scene` Komponente
 
 Zur Verknüpfung der Geodaten mit den AR-Inhalten wird das [GeoJSON Format (RFC 7946)](https://datatracker.ietf.org/doc/html/rfc7946) verwendet. Dieses ermöglicht eine einheitliche Einbindung der Koordinaten.
 
-Beispiel ([Quelle](https://geojson.org/)):
+Beispiel:
 
 ```json
 {
-  "type": "Feature",
-  "geometry": {
-    "type": "Point",
-    "coordinates": [125.6, 10.1]
-  },
-  "properties": {
-    "name": "Dinagat Islands"
-  }
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mensa",
+        "audio": "mensa",
+        "description": "Die Mensa der Technischen Hochschule Köln am Campus Gummersbach ist ein lebendiger Treffpunkt für Studierende und Mitarbeiter. Hier werden köstliche Mahlzeiten und Snacks serviert, die den Gaumen verwöhnen und die Energie für den Studienalltag liefern. Die Mensa schafft eine angenehme Atmosphäre, in der sich Menschen treffen, austauschen und gemeinsam eine kulinarische Erfahrung genießen können."
+      },
+      "geometry": {
+        "coordinates": [7.562724725621337, 51.02231978624965],
+        "type": "Point"
+      },
+      "id": 0
+    }
+  ]
 }
 ```
 
@@ -60,6 +68,8 @@ Die Komponente `clicker.js` implementiert z.B. den Click-Handler für die jeweil
 ### `/pages/th-koeln/assets`
 
 Das `assets` Verzeichnis enthält die Audioinhalte, die an den AR-Spots abgespielt werden sollen.
+
+Die Inhalte in diesem Prototypen wurden mit Hilfe von [OpenAIs ChatGTP](https://chat.openai.com/) als Text generiert und über [veed.io's Text-to-Speech](https://www.veed.io/) in Audioinhalte überführt.
 
 # Proof of Concepts
 
