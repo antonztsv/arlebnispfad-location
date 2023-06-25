@@ -52,6 +52,19 @@
         "type": "Point"
       },
       "id": 3
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Test",
+        "audio": "test",
+        "description": "Test."
+      },
+      "geometry": {
+        "coordinates": [7.560170888900758, 51.02047029498814],
+        "type": "Point"
+      },
+      "id": 0
     }
   ]
 }

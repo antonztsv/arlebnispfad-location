@@ -7,6 +7,10 @@ AFRAME.registerComponent("clicker", {
     const durationEl = cardEl.querySelector(".duration");
 
     this.el.addEventListener("click", (e) => {
+      const { latitude, longitude } = this.el.components["gps-projected-entity-place"].data;
+      console.log(latitude, longitude);
+      // console.log(this.el.components["gps-new-entity-place"].distance);
+
       // make sure card is not already visible
       if (!cardEl.classList.contains("hidden")) return;
 

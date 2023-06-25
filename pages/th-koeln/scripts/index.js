@@ -37,7 +37,7 @@ function renderPlaces(places) {
     text.setAttribute("align", "center");
     text.setAttribute("look-at", "[gps-projected-camera]");
     text.setAttribute("clicker", "");
-    text.setAttribute("distance-scale", "minScale: 100; maxScale: 100; minDistance: 100; maxDistance: 5000;");
+    text.setAttribute("distance-scale", "");
     text.setAttribute("data-audio", audio);
     text.setAttribute("data-description", description);
     text.setAttribute("data-title", name);
