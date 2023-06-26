@@ -12,7 +12,6 @@
     <script defer src="/_vercel/insights/script.js"></script>
 
     <!-- AR.js/A-Frame scripts -->
-    <!-- <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script> -->
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
@@ -20,9 +19,8 @@
     <!-- Custom scripts -->
     <script src="scripts/index.js"></script>
     <script src="scripts/components/clicker.js"></script>
-    <script src="scripts/components/distance-scale.js"></script>
   </head>
-  <body>
+  <body style="margin: 0; overflow: hidden">
     <style>
       /* a-frame modal styles have to be set here */
       .a-dialog {
@@ -65,16 +63,17 @@
     <a-scene
       vr-mode-ui="enabled: false"
       arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
+      raycaster="objects: .clickable; near: 0; far: 5000;"
       cursor="rayOrigin: mouse; fuse: false"
-      raycaster="objects: .clickable; near: 0; far: 5000"
       renderer="antialias: true; alpha: true"
     >
-      <a-assets> </a-assets>
+      <a-assets>
+        <a-asset-item id="waypoint" src="assets/models/waypoint.gltf"></a-asset-item>
+      </a-assets>
 
       <a-camera gps-projected-camera rotation-reader></a-camera>
     </a-scene>
 
-    <!-- Web/2D content -->
     <div class="card hidden">
       <div class="info">
         <div class="info-head">

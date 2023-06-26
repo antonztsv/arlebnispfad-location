@@ -1,5 +1,6 @@
 window.onload = async () => {
   const places = await staticLoadPlaces();
+
   return renderPlaces(places);
 };
 
@@ -28,28 +29,56 @@ function renderPlaces(places) {
     audioEl.setAttribute("src", `./assets/audio/${audio}.mp3`);
     audioEl.setAttribute("preload", "auto");
 
-    // add place as text
-    const text = document.createElement("a-text");
-    text.setAttribute("gps-projected-entity-place", `latitude: ${latitude}; longitude: ${longitude};`);
-    text.setAttribute("value", name);
-    text.setAttribute("scale", "50 50 50");
-    text.setAttribute("position", "0 10 0");
-    text.setAttribute("align", "center");
-    text.setAttribute("look-at", "[gps-projected-camera]");
-    text.setAttribute("clicker", "");
-    text.setAttribute("distance-scale", "");
-    text.setAttribute("data-audio", audio);
-    text.setAttribute("data-description", description);
-    text.setAttribute("data-title", name);
-    text.setAttribute("sound", `src: #${audio}; refDistance: 10000;`);
-    text.classList.add("clickable");
+    // create waypoint
+    const waypoint = document.createElement("a-entity");
+    waypoint.setAttribute("gps-projected-entity-place", `latitude: ${latitude}; longitude: ${longitude};`);
+    waypoint.setAttribute("gltf-model", `#waypoint`);
+    waypoint.setAttribute("scale", "10 10 10");
+    waypoint.setAttribute("position", "0 0 0");
+    waypoint.setAttribute("data-audio", audio);
+    waypoint.setAttribute("data-description", description);
+    waypoint.setAttribute("data-title", name);
+    waypoint.setAttribute("sound", `src: #${audio}; refDistance: 10000;`);
+    waypoint.setAttribute("clicker", "");
+    waypoint.classList.add("clickable");
 
+    // create plane
+    const plane = document.createElement("a-entity");
+    plane.setAttribute("geometry", "primitive: plane; width: 1; height: 0.2;");
+    plane.setAttribute("material", "color: #000; opacity: 0.2;");
+    plane.setAttribute("scale", "20 20 20");
+    plane.setAttribute("position", "0 5 0");
+    plane.setAttribute("look-at", "[gps-projected-camera]");
+    plane.setAttribute("clicker", "");
+    plane.classList.add("clickable");
+
+    // create text
+    const text = document.createElement("a-text");
+    text.setAttribute("value", name);
+    text.setAttribute("align", "center");
+    text.setAttribute("position", "0 0 0.1");
+    text.setAttribute("color", "#fff");
+
+    // wait for text to load to calculate and set plane width
     text.addEventListener("loaded", () => {
+      const { data } = text.components.text;
+      const totalWidth = data.value.length * (data.width / data.wrapCount);
+
+      plane.setAttribute("geometry", { width: totalWidth + 0.2 });
+    });
+
+    // add text to plane
+    plane.appendChild(text);
+
+    // add plane to waypoint
+    waypoint.appendChild(plane);
+
+    waypoint.addEventListener("loaded", () => {
       window.dispatchEvent(new CustomEvent("gps-entity-place-loaded", { detail: { component: this.el } }));
     });
 
     assets.appendChild(audioEl);
-    scene.appendChild(text);
+    scene.appendChild(waypoint);
   });
 }
 
