@@ -43,28 +43,15 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Der Zeitungsleser",
-        "audio": "zeitungsleser",
-        "description": "Nichts bringt den Zeitungsleser, der am Anfang der Fußgängerzone steht, aus der Ruhe. Ganz leer ist es auch am frühen Morgen nicht, denn er steht immer da, vertraut, freundlich, ruhig, den Blick konzentriert auf die neuesten Nachrichten gerichtet. Und genau so entspannt wirkt die lebensgroße Bronzefigur von Waldemar Wien, wenn spielende Kinder herumtoben, Schülerscharen an ihm vorbei zum Busbahnhof strömen, dicht daneben frische Erdbeeren verkauft werden, wenn es auf die Zeitung in seinen Händen regnet oder schneit. Waldemar Wien (1927 - 1994) versteht es, mit seinen Skulpturen öffentliche Plätze lebendig auszugestalten."
+        "name": "Innovation Hub",
+        "audio": "innohub",
+        "description": "Der Innovation Hub Bergisches RheinLand wird durch den Europäischen Fonds für regionale Entwicklung – kurz EFRE gefördert. Ziel ist es als zentraler Knotenpunkt zur Steigerung der Innovationsfähigkeit regionaler Unternehmen und Organisationen beizutragen. Zusätzlich soll ein starkes Netzwerk für die künftigen Herausforderungen der digitalen Transformation und Industrie 4.0 geschmieden werden."
       },
       "geometry": {
-        "coordinates": [7.56791, 51.02486],
+        "coordinates": [7.565361, 51.022809],
         "type": "Point"
       },
       "id": 3
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Test",
-        "audio": "test",
-        "description": "Test."
-      },
-      "geometry": {
-        "coordinates": [7.560170888900758, 51.02047029498814],
-        "type": "Point"
-      },
-      "id": 0
     }
   ]
 }
