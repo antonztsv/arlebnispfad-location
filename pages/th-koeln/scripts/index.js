@@ -33,8 +33,7 @@ function renderPlaces(places) {
     const waypoint = document.createElement("a-entity");
     waypoint.setAttribute("gps-projected-entity-place", `latitude: ${latitude}; longitude: ${longitude};`);
     waypoint.setAttribute("gltf-model", `#waypoint`);
-    waypoint.setAttribute("scale", "10 10 10");
-    waypoint.setAttribute("position", "0 0 0");
+    waypoint.setAttribute("scale", "5 5 5");
     waypoint.setAttribute("data-audio", audio);
     waypoint.setAttribute("data-description", description);
     waypoint.setAttribute("data-title", name);
@@ -46,9 +45,12 @@ function renderPlaces(places) {
     const plane = document.createElement("a-entity");
     plane.setAttribute("geometry", "primitive: plane; width: 1; height: 0.2;");
     plane.setAttribute("material", "color: #000; opacity: 0.2;");
-    plane.setAttribute("scale", "20 20 20");
+    plane.setAttribute("scale", "5 5 5");
     plane.setAttribute("position", "0 5 0");
     plane.setAttribute("look-at", "[gps-projected-camera]");
+    plane.setAttribute("data-audio", audio);
+    plane.setAttribute("data-description", description);
+    plane.setAttribute("data-title", name);
     plane.setAttribute("clicker", "");
     plane.classList.add("clickable");
 
@@ -58,6 +60,9 @@ function renderPlaces(places) {
     text.setAttribute("align", "center");
     text.setAttribute("position", "0 0 0.1");
     text.setAttribute("color", "#fff");
+    text.setAttribute("data-audio", audio);
+    text.setAttribute("data-description", description);
+    text.setAttribute("data-title", name);
 
     // wait for text to load to calculate and set plane width
     text.addEventListener("loaded", () => {
