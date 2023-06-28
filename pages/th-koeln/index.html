@@ -5,9 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>ARlebnispfade OBK - TH-Köln</title>
 
-    <!-- Custom styles -->
-    <link rel="stylesheet" href="styles.css" />
-
     <!-- Vercel Insights -->
     <script defer src="/_vercel/insights/script.js"></script>
 
@@ -18,7 +15,11 @@
 
     <!-- Custom scripts -->
     <script src="scripts/index.js"></script>
+    <script src="scripts/render.js"></script>
     <script src="scripts/components/clicker.js"></script>
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body style="margin: 0; overflow: hidden">
     <style>
@@ -63,7 +64,7 @@
     <a-scene
       vr-mode-ui="enabled: false"
       arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
-      raycaster="objects: .clickable; near: 0; far: 5000;"
+      raycaster="objects: .clickable; near: 0; far: 1000;"
       cursor="rayOrigin: mouse; fuse: false"
       renderer="antialias: true; alpha: true"
     >
