@@ -13,6 +13,66 @@ oder unter folgendem QR-Code aufgerufen werden:
 
 Im Rahmen des Projekts "Historische Augment Reality Tour 'ARlebnis OBK'" der VHS Oberberg soll entlang der Straße der Arbeit in Wiehl und Wipperfürth ein innovatives Konzept zur digitalen Weiterbildung mittels Augmented Reality (AR) entwickelt werden. Es sollen ältere, nicht technikaffine Menschen sowie jüngere, technikaffine Menschen als auch Schulklassen gleichermaßen an neue Technologien herangeführt und ihnen gleichzeitig der Zugang zur Geschichte und Kultur ihrer Region ermöglicht werden. Der Fokus des Vorhabens liegt somit in der Förderung einer generationenübergreifenden, inklusiven und nachhaltigen Strategie zur digitalen Weiterbildung.
 
+# Lokale Ausführung
+
+> Der Prototyp kann zwar lokal ausgeführt werden, jedoch sind die AR-Inhalte nur am Campus Gummersbach der TH Köln zu sehen.
+
+Es stehen zwei Optionen zur lokalen Ausführung zur Verfügung: über die [Live Server Extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) in VSCode oder über [Cloudflare Tunnels](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps).
+Die Ausführung über Cloudflare Tunnels ist dabei zu empfehlen.
+
+## Schritte
+
+1. Repository klonen
+```
+git clone git@github.com:antonztsv/arlebnispfad-location.git
+```
+
+2. In den Ordner wechseln
+```
+cd arlebnispfad-location
+```
+
+3. Projekt in Visual Studio Code öffnen
+```
+code .
+```
+
+### Cloudflare Tunnel
+
+1. Installation Cloudflared
+
+   MacOS - Homebrew:
+   ```
+   brew install cloudflare/cloudflare/cloudflared
+   ```
+
+   Andere Betriebssysteme: [Cloudflared Downloads](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/installation/)
+
+2. Live Server starten
+
+  - Auf den `Go Live` Button in der unteren Leiste von VSCode klicken oder
+  - `CMD` + `Shift` + `P` - Live Server: Open with LIve Server
+
+3. Quick Tunnel starten
+   ```
+   cloudflared tunnel --url http://localhost:5500
+   ```
+
+   Die bereitgestellte URL kann im Browser des Smartphones geöffnet werden.
+
+### VSCode Live Server
+
+1. HTTPS in der Live Server Extension aktivieren
+
+   Folgenden Anweisungen folgen: [How to enable HTTPS on live server (Visual Studio Code)](https://medium.com/webisora/how-to-enable-https-on-live-server-visual-studio-code-5659fbc5542c)
+
+2. Live Server starten
+
+  - Auf den `Go Live` Button in der unteren Leiste von VSCode klicken oder
+  - `CMD` + `Shift` + `P` - Live Server: Open with LIve Server
+
+  Die Seite kann anschließend über die lokale IP-Adresse des Systems + dem Live Server Port (5500) aufgerufen werden.
+
 # Prototyp
 
 Der Prototyp zeigt die Möglichkeiten zur Einbindung von Audio-Inhalten an AR-Spots mittels [AR.js](https://github.com/AR-js-org/AR.js) und [A-Frame](https://aframe.io/) auf.
