@@ -11,7 +11,7 @@ oder unter folgendem QR-Code aufgerufen werden:
 
 # Problemfeld
 
-Im Rahmen des Projekts "Historische Augment Reality Tour 'ARlebnis OBK'" der VHS Oberberg soll entlang der Straße der Arbeit in Wiehl und Wipperfürth ein innovatives Konzept zur digitalen Weiterbildung mittels Augmented Reality (AR) entwickelt werden. Es sollen ältere, nicht technikaffine Menschen sowie jüngere, technikaffine Menschen als auch Schulklassen gleichermaßen an neue Technologien herangeführt und ihnen gleichzeitig der Zugang zur Geschichte und Kultur ihrer Region ermöglicht werden. Der Fokus des Vorhabens liegt somit in der Förderung einer generationenübergreifenden, inklusiven und nachhaltigen Strategie zur digitalen Weiterbildung.
+Im Rahmen des Projektes "Historische Augment Reality Tour 'ARlebnis OBK'" der VHS Oberberg soll entlang der Straße der Arbeit in Wiehl und Wipperfürth ein innovatives Konzept zur digitalen Weiterbildung mittels Augmented Reality (AR) entwickelt werden. Es sollen ältere, nicht technikaffine Menschen sowie jüngere, technikaffine Menschen als auch Schulklassen gleichermaßen an neue Technologien herangeführt und ihnen gleichzeitig der Zugang zur Geschichte und Kultur ihrer Region ermöglicht werden. Der Fokus des Vorhabens liegt somit in der Förderung einer generationenübergreifenden, inklusiven und nachhaltigen Strategie zur digitalen Weiterbildung.
 
 # Lokale Ausführung
 
@@ -23,16 +23,19 @@ Die Ausführung über Cloudflare Tunnels ist dabei zu empfehlen.
 ## Schritte
 
 1. Repository klonen
+
 ```
 git clone git@github.com:antonztsv/arlebnispfad-location.git
 ```
 
 2. In den Ordner wechseln
+
 ```
 cd arlebnispfad-location
 ```
 
 3. Projekt in Visual Studio Code öffnen
+
 ```
 code .
 ```
@@ -42,6 +45,7 @@ code .
 1. Installation Cloudflared
 
    MacOS - Homebrew:
+
    ```
    brew install cloudflare/cloudflare/cloudflared
    ```
@@ -50,10 +54,11 @@ code .
 
 2. Live Server starten
 
-  - Auf den `Go Live` Button in der unteren Leiste von VSCode klicken oder
-  - `CMD` + `Shift` + `P` - Live Server: Open with LIve Server
+- Auf den `Go Live` Button in der unteren Leiste von VSCode klicken oder
+- `CMD` + `Shift` + `P` - Live Server: Open with LIve Server
 
 3. Quick Tunnel starten
+
    ```
    cloudflared tunnel --url http://localhost:5500
    ```
@@ -68,10 +73,10 @@ code .
 
 2. Live Server starten
 
-  - Auf den `Go Live` Button in der unteren Leiste von VSCode klicken oder
-  - `CMD` + `Shift` + `P` - Live Server: Open with LIve Server
+- Auf den `Go Live` Button in der unteren Leiste von VSCode klicken oder
+- `CMD` + `Shift` + `P` - Live Server: Open with LIve Server
 
-  Die Seite kann anschließend über die lokale IP-Adresse des Systems + dem Live Server Port (5500) aufgerufen werden.
+Die Seite kann anschließend über die lokale IP-Adresse des Systems + dem Live Server Port (5500) aufgerufen werden.
 
 # Prototyp
 
@@ -118,7 +123,11 @@ Beispiel:
 
 ### `/pages/th-koeln/scripts/index.js`
 
-Die `index.js` Datei enthält die Logik zur Einbindung der AR-Inhalte. Hier werden die Geodaten aus der `data.json` Datei ausgelesen und die AR-Spots anhand der Koordinaten in der Umgebung platziert. Zudem werden die Audioinhalte geladen und die Interaktionsschnittstelle definiert.
+Die `index.js` Datei ist für die Initialisierung der Interaktionselemente auf der Seite sowie der Audiointeraktionen zuständig.
+
+### `/pages/th-koeln/scripts/render.js`
+
+Die `render.js` Datei enthält die Logik zur Einbindung der AR-Inhalte. Hier werden die Geodaten aus der `data.json` Datei ausgelesen und die AR-Spots anhand der Koordinaten in der Umgebung platziert.
 
 ### `/pages/th-koeln/scripts/components`
 
@@ -127,7 +136,7 @@ Die Komponente `clicker.js` implementiert z.B. den Click-Handler für die jeweil
 
 ### `/pages/th-koeln/assets`
 
-Das `assets` Verzeichnis enthält die Audioinhalte, die an den AR-Spots abgespielt werden sollen.
+Das `assets` Verzeichnis enthält die Audioinhalte und das 3D-Modell, die an den AR-Spots platziert und abgespielt werden sollen.
 
 Die Inhalte in diesem Prototypen wurden mit Hilfe von [OpenAIs ChatGTP](https://chat.openai.com/) als Text generiert und über [veed.io's Text-to-Speech](https://www.veed.io/) in Audioinhalte überführt.
 
