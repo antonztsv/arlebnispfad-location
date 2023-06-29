@@ -34,6 +34,7 @@ const renderPlaces = (places) => {
     waypoint.setAttribute("gps-projected-entity-place", `latitude: ${latitude}; longitude: ${longitude};`);
     waypoint.setAttribute("gltf-model", `#waypoint`);
     waypoint.setAttribute("scale", "5 5 5");
+    waypoint.setAttribute("look-at", "[gps-projected-camera]");
     waypoint.setAttribute("data-audio", audio);
     waypoint.setAttribute("data-description", description);
     waypoint.setAttribute("data-title", name);
