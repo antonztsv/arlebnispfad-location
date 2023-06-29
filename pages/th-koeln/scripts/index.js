@@ -1,68 +1,25 @@
-window.onload = async () => {
-  const places = await staticLoadPlaces();
-  return renderPlaces(places);
-};
-
-async function staticLoadPlaces() {
-  const res = await fetch("./data.json");
-  const data = await res.json();
-
-  return data.features;
-}
-
-function renderPlaces(places) {
-  const scene = document.querySelector("a-scene");
-  const assets = document.querySelector("a-assets");
-
-  places.forEach((place) => {
-    const {
-      geometry: {
-        coordinates: [longitude, latitude],
-      },
-      properties: { name, audio, description },
-    } = place;
-
-    // add audio to assets
-    const audioEl = document.createElement("audio");
-    audioEl.setAttribute("id", audio);
-    audioEl.setAttribute("src", `./assets/audio/${audio}.mp3`);
-    audioEl.setAttribute("preload", "auto");
-
-    // add place as text
-    const text = document.createElement("a-text");
-    text.setAttribute("gps-projected-entity-place", `latitude: ${latitude}; longitude: ${longitude};`);
-    text.setAttribute("value", name);
-    text.setAttribute("scale", "50 50 50");
-    text.setAttribute("position", "0 10 0");
-    text.setAttribute("align", "center");
-    text.setAttribute("look-at", "[gps-projected-camera]");
-    text.setAttribute("clicker", "");
-    text.setAttribute("distance-scale", "minScale: 100; maxScale: 100; minDistance: 100; maxDistance: 5000;");
-    text.setAttribute("data-audio", audio);
-    text.setAttribute("data-description", description);
-    text.setAttribute("data-title", name);
-    text.setAttribute("sound", `src: #${audio}; refDistance: 10000;`);
-    text.classList.add("clickable");
-
-    text.addEventListener("loaded", () => {
-      window.dispatchEvent(new CustomEvent("gps-entity-place-loaded", { detail: { component: this.el } }));
-    });
-
-    assets.appendChild(audioEl);
-    scene.appendChild(text);
-  });
-}
-
 document.addEventListener("DOMContentLoaded", () => {
   initAudioControls();
+  initBackButton();
+  initCloseButton();
+  cardCollapse();
+});
 
-  // back button
+const cardCollapse = () => {
+  const description = document.querySelector(".description");
+  description.addEventListener("click", (e) => {
+    description.classList.toggle("collapsed");
+  });
+};
+
+const initBackButton = () => {
   const back = document.querySelector(".back");
   back.addEventListener("click", (e) => {
     window.history.back();
   });
+};
 
-  // card close button
+const initCloseButton = () => {
   const close = document.querySelector(".close");
   close.addEventListener("click", (e) => {
     stopAllAudio();
@@ -80,13 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const player = document.querySelector(".player");
     player.dataset.audioSource = "";
   });
-
-  // card description toggle
-  const description = document.querySelector(".description");
-  description.addEventListener("click", (e) => {
-    description.classList.toggle("collapsed");
-  });
-});
+};
 
 const initAudioControls = () => {
   const player = document.querySelector(".player");

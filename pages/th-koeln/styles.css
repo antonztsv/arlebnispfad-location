@@ -4,13 +4,11 @@
   --light: #fff;
 }
 
-/* basic css reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-/* ----- */
 
 body {
   font-family: sans-serif;
@@ -50,8 +48,9 @@ a-scene {
   opacity: 1;
 
   padding: 1rem;
-  margin: 0.5rem;
-  min-width: calc(100vw - 1rem);
+  margin: 0.5rem auto;
+  width: calc(100vw - 1rem);
+  max-width: 1200px;
 
   border-radius: 10px;
 
